@@ -86,7 +86,22 @@ namespace Introducao.Controllers
 
             };
 
-            return View(pessoaDaTelaPegandoOsCamposDePessoaDaPropriedadeName);
+            //eu poderia colocar aqui uma viewbag ou viewdata e na view obter esses valores
+
+            return View(pessoaDaTelaPegandoOsCamposDePessoaDaPropriedadeName); //view tipada
+        }
+
+        public ActionResult ListaComAViewTipada(Pessoa pessoaQueVemDaView)
+        {
+            Pessoa pessoa = new Pessoa
+            {
+                PessoaId = pessoaQueVemDaView.PessoaId,
+                Nome = pessoaQueVemDaView.Nome,
+                Tipo = pessoaQueVemDaView.Tipo
+
+            };
+
+            return View(pessoa); //view tipada
         }
 
         public ActionResult Index2()
