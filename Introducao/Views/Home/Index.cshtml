@@ -1,0 +1,32 @@
+﻿@model Introducao.Models.Pessoa
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div>
+    <p>Olá @ViewData["Nome"] !! </p>  
+    <p>Você é do tipo @ViewData["Tipo"] e </p>  
+    <p>teu id é @ViewData["PessoaId"] </p>
+    <p>e tua idade é @ViewBag.Idade</p>
+    <br />
+
+    Obrigado,
+
+    <br />
+    <br />
+
+    <p>####################################################</p>
+    Agora obtendo teus dados via Model : <br /><br />
+
+    <p>Olá <strong>@Model.Nome !!</strong> </p>  
+    <p>Você é do tipo <strong>@Model.Tipo</strong> e </p>  
+    <p>teu id é <strong>@Model.PessoaId</strong> </p>
+    <p>e tua idade é <strong>@Model.Idade</strong></p>
+ 
+
+    Obrigado,
+
+
+</div>
+
