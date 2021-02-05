@@ -167,6 +167,7 @@
     <Content Include="Views\Home\Index2.cshtml" />
     <Content Include="Views\Home\Ajuda.cshtml" />
     <Content Include="Views\Home\Contatos.cshtml" />
+    <Content Include="Views\Home\Lista.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

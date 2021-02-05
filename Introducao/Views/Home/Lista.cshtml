@@ -1,0 +1,53 @@
+﻿@model Introducao.Models.Pessoa
+
+@{
+    ViewBag.Title = "Lista";
+}
+
+<h2>Lista de pessoas abaixo (vinda do banco ou memória)</h2>
+<br />
+@foreach (var pessoa in ViewBag.Pessoas)
+{
+    <p> o teu nome é @pessoa.Nome</p>
+    <p> e tua idade é @pessoa.Idade</p>
+    <br />
+    <p> ############################</p>
+    <br />
+}
+
+<br />
+<br />
+
+<div>
+    <h2> Informações da Pessoa que veio da tela </h2>
+    <div>
+        <b>Nome: </b>
+    </div>
+    <div>
+        @Model.Nome
+    </div>
+    <div>
+        <b>
+            Id:
+        </b>
+    </div>
+    <div>
+        @Model.PessoaId
+    </div>
+
+
+    <div>
+        <b>
+            Tipo Pessoa:
+        </b>
+    </div>
+    <div>
+        @Model.Tipo
+    </div>
+    <a href="~/"> Voltar </a>
+   
+
+
+
+</div>
+

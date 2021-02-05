@@ -1,4 +1,7 @@
-﻿using System.Web.Mvc;
+﻿using Introducao.Models;
+using System;
+using System.Collections.Generic;
+using System.Web.Mvc;
 
 namespace Introducao.Controllers
 {
@@ -26,6 +29,51 @@ namespace Introducao.Controllers
             ViewBag.Idade = pessoa.Idade;
 
             return View(pessoa);
+        }
+
+        [HttpPost]
+        public ActionResult Lista(int PessoaId, string Nome, string Tipo)
+        {
+            //poderia montar uma lista de pessoas do banco de dados e enviaria para a view Lista e assim varreria essa lista e mostraria a lista 
+            //na tela; o exemplo abaixo é montando a lista do banco porém pode ser necessário obter esses dados da tela.
+
+            List<Pessoa> pessoas = new List<Pessoa>();
+
+            Pessoa pessoa1 = new Pessoa
+            {
+                PessoaId = 1,
+                Idade = 20,
+                Nome = "Fulano 1",
+                Tipo = 1
+            };
+
+            Pessoa pessoa2 = new Pessoa
+            {
+                PessoaId = 2,
+                Idade = 22,
+                Nome = "Fulano 2",
+                Tipo = 1
+            };
+
+
+            pessoas.Add(pessoa1);
+            pessoas.Add(pessoa2);
+
+            ViewBag.Pessoas = pessoas;
+
+
+            // exemplo obtendo os dados da tela:
+
+            Pessoa pessoaTela = new Pessoa
+            {
+                PessoaId = PessoaId,
+                Nome = Nome,
+                Tipo = !string.IsNullOrEmpty(Tipo) ? Convert.ToInt32(Tipo) : 1
+            };
+
+
+
+            return View(pessoaTela);
         }
 
         public ActionResult Index2()

@@ -28,5 +28,40 @@
     Obrigado,
 
 
+
+
 </div>
+
+<form action="Home/Lista" method="POST">
+    <fieldset>
+        <legend>Informações de Pessoas</legend>
+
+
+        <div>
+            <label for="PessoaId"> Código </label>
+
+        </div>
+        <div>
+            <input type="number" value="@Model.PessoaId" name="PessoaId" />
+        </div>
+
+        <div>
+            <label for="Nome"> Nome </label>
+        </div>
+        <div>
+            <input type="text" value="@Model.Nome" name="Nome" />
+        </div>
+
+        <div>
+            <label for="Tipo"> Tipo </label>
+
+        </div>
+        <div>
+            <input type="number" value="@Model.Tipo" name="Tipo" />
+        </div>
+        <p>
+            <input type="submit" value="Enviar"
+        </p>
+    </fieldset>
+</form>
 
