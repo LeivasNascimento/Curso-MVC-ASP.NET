@@ -168,6 +168,7 @@
     <Content Include="Views\Home\Ajuda.cshtml" />
     <Content Include="Views\Home\Contatos.cshtml" />
     <Content Include="Views\Home\Lista.cshtml" />
+    <Content Include="Views\Home\ListaComFormCollection.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

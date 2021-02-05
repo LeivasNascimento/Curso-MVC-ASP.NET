@@ -1,22 +1,11 @@
 ﻿@model Introducao.Models.Pessoa
-
+ 
 @{
-    ViewBag.Title = "Lista";
+    ViewBag.Title = "ListaComFormCollection";
 }
 
-<h2>Lista de pessoas abaixo (vinda do banco ou memória)</h2>
-<br />
-@foreach (var pessoa in ViewBag.Pessoas)
-{
-    <p> o teu nome é @pessoa.Nome</p>
-    <p> e tua idade é @pessoa.Idade</p>
-    <br />
-    <p> ############################</p>
-    <br />
-}
+<h2>ListaComFormCollection</h2>
 
-<br />
-<br />
 
 <div>
     <h2> Informações da Pessoa que veio da tela </h2>
@@ -46,7 +35,7 @@
     </div>
 
     <a href="~/"> Voltar </a>
-   
+
 
 
 

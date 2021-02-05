@@ -76,6 +76,19 @@ namespace Introducao.Controllers
             return View(pessoaTela);
         }
 
+        public ActionResult ListaComFormCollection(FormCollection form)
+        {
+            Pessoa pessoaDaTelaPegandoOsCamposDePessoaDaPropriedadeName = new Pessoa
+            {
+                PessoaId = Convert.ToInt32(form["PessoaId"]),
+                Nome = form["Nome"],
+                Tipo = !string.IsNullOrEmpty(form["Tipo"]) ? Convert.ToInt32(form["Tipo"]) : 1
+
+            };
+
+            return View(pessoaDaTelaPegandoOsCamposDePessoaDaPropriedadeName);
+        }
+
         public ActionResult Index2()
         {
             return View();
