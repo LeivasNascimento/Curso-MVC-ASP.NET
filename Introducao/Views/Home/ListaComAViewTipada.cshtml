@@ -1,4 +1,4 @@
-﻿
+﻿@model Introducao.Models.Pessoa
 @{
     ViewBag.Title = "ListaComAViewTipada";
 }
@@ -9,14 +9,14 @@
 <div>
     <h2> Informações da Pessoa que veio da tela </h2>
     <div>
-        <b>Nome: </b>
+        <b>@Html.LabelFor(x => x.Nome) </b>
     </div>
     <div>
         @Model.Nome
     </div>
     <div>
         <b>
-            Id:
+            @Html.LabelFor(x => x.PessoaId)
         </b>
     </div>
     <div>
@@ -26,7 +26,7 @@
 
     <div>
         <b>
-            Tipo Pessoa:
+            @Html.LabelFor(x =>x.Tipo)
         </b>
     </div>
     <div>
@@ -34,6 +34,7 @@
     </div>
 
     <a href="~/"> Voltar </a>
+    @Html.ActionLink("Voltar", "Index", "Home");
 
 
 
