@@ -1,0 +1,24 @@
+﻿@model Introducao.Models.Usuario
+
+@{
+    ViewBag.Title = "Resultado";
+}
+
+<h2>Resultado</h2>
+<h1>Bem vindo @Model.Nome</h1>
+<fieldset>
+    <legend> Dados do usuário para confirmação </legend>
+</fieldset>
+<div class="editor-label">
+Nome: @Model.Nome
+</div>
+<div class="editor-label">
+    Login: @Model.Login
+</div>
+<div class="editor-label">
+    Senha: @Model.Senha
+</div>
+<div class="editor-label">
+    Observações: @Model.Observacoes
+</div>
+
