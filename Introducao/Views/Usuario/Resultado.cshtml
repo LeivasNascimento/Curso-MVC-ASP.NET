@@ -10,15 +10,34 @@
     <legend> Dados do usuário para confirmação </legend>
 </fieldset>
 <div class="editor-label">
-Nome: @Model.Nome
+    @Html.DisplayNameFor(x => x.Nome)
+</div>
+<div class="editor-field">
+    @Html.DisplayFor(x => x.Nome)
 </div>
 <div class="editor-label">
-    Login: @Model.Login
+    @Html.DisplayNameFor(x => x.Login)
+</div>
+<div class="editor-field">
+    @Html.DisplayFor(x => x.Login)
 </div>
 <div class="editor-label">
-    Senha: @Model.Senha
+    @Html.DisplayNameFor(x=> x.Senha)
+</div>
+<div class="editor-field">
+    @Html.DisplayFor(x=>x.Senha)
 </div>
 <div class="editor-label">
-    Observações: @Model.Observacoes
+    @Html.DisplayNameFor(x=>x.Senha)
 </div>
+<div class="editor-field">
+    @Html.DisplayFor(x=>x.Senha)
+</div>
+<div class="editor-label">
+    @Html.DisplayNameFor(x=>x.Observacoes)
+</div>
+<div class="editor-field">
+    @Html.DisplayFor(x=>x.Observacoes)
+</div>
+<p>@Html.ActionLink("Voltar","Usuario")</p>
 

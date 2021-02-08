@@ -21,6 +21,15 @@ namespace Introducao.Controllers
         [HttpPost]
         public ActionResult Usuario(Usuario usuario)
         {
+            if(string.IsNullOrEmpty(usuario.Nome))
+            {
+                ModelState.AddModelError("", "O campo nome é obrigatório"); //primeiro parametro é a localização do campo para mostra a msg ao lado.
+            }
+
+            if (usuario.Senha != usuario.ConfirmarSenha)
+            {
+                ModelState.AddModelError("", "A senha deve ser igual a senha de confirmação"); //primeiro parametro é a localização do campo para mostra a msg ao lado.
+            }
 
             if (ModelState.IsValid)
             {
