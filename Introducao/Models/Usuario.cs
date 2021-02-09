@@ -7,24 +7,23 @@ namespace Introducao.Models
         public int PessoaId { get; set; }
         [Required(ErrorMessage ="O nome é obrigatório")]
         public string Nome { get; set; }
+        [Range(18,70, ErrorMessage = "A idade tem que está entre 18 e 70 anos")]
         public int Idade { get; set; }
+      //  [RegularExpression(@"\w+([.-]?\w+)@\w+([.-]?\w+)(.\w{1,3})+$/", ErrorMessage = "Digite um email válido")]
         public string Email { get; set; }
+        [RegularExpression(@"[a-zA-Z]{5,15}", ErrorMessage = "Somentes letras e de 5 a 15 caracteres")]
+        [Required(ErrorMessage = "Login é obrigatório")]
         public string Login { get; set; }
+
+        [Required(ErrorMessage = "Senha obrigatória")]
+
         public string Senha { get; set; }
+
+        [Compare("Senha", ErrorMessage = "Senhas devem ser iguais")]
         public string ConfirmarSenha { get; set; }
 
         [StringLength(20, MinimumLength = 5, ErrorMessage = "Insira as obs com o tamanho min de 5 e maximo de 20")]
         public string Observacoes { get; set; }
 
-        /*if(string.IsNullOrEmpty(usuario.Nome))
-            {
-                ModelState.AddModelError("", "O campo nome é obrigatório"); //primeiro parametro é a localização do campo para mostra a msg ao lado.
-            }
-
-            if (usuario.Senha != usuario.ConfirmarSenha)
-            {
-                ModelState.AddModelError("", "A senha deve ser igual a senha de confirmação"); //primeiro parametro é a localização do campo para mostra a msg ao lado.
-            }
-        */
     }
 }
