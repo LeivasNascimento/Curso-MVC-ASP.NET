@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Web.Mvc;
 
 namespace Introducao.Models
 {
@@ -13,13 +14,14 @@ namespace Introducao.Models
         public string Email { get; set; }
         [RegularExpression(@"[a-zA-Z]{5,15}", ErrorMessage = "Somentes letras e de 5 a 15 caracteres")]
         [Required(ErrorMessage = "Login é obrigatório")]
+        [Remote("LoginUnico","Usuario", ErrorMessage = "Este login já existe")]
         public string Login { get; set; }
 
         [Required(ErrorMessage = "Senha obrigatória")]
 
         public string Senha { get; set; }
 
-        [Compare("Senha", ErrorMessage = "Senhas devem ser iguais")]
+        [System.ComponentModel.DataAnnotations.Compare("Senha", ErrorMessage = "Senhas devem ser iguais")]
         public string ConfirmarSenha { get; set; }
 
         [StringLength(20, MinimumLength = 5, ErrorMessage = "Insira as obs com o tamanho min de 5 e maximo de 20")]

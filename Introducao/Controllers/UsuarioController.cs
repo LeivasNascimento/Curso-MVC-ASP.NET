@@ -1,6 +1,7 @@
 ﻿using Introducao.Models;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -35,6 +36,20 @@ namespace Introducao.Controllers
         public ActionResult Resultado(Usuario usuario)
         {
             return View(usuario);
+        }
+
+
+        public ActionResult LoginUnico(string login)
+        {
+            var bdExemplo = new Collection<string>
+            {
+                "LoginFulano1",
+                "LoginFulano2",
+                "LoginFulano3",
+                "LoginFulano4",
+            }; // verificar se já existe o que for informado na tela
+
+            return Json(bdExemplo.All(x => x.ToLower() != login.ToLower()), JsonRequestBehavior.AllowGet);
         }
     }
 }
